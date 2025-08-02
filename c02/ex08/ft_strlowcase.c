@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohamed- <mohamed-@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/02 18:03:52 by mohamed-          #+#    #+#             */
-/*   Updated: 2025/08/02 18:03:52 by mohamed-         ###   ########.fr       */
+/*   Created: 2025/08/02 19:27:33 by mohamed-          #+#    #+#             */
+/*   Updated: 2025/08/02 19:27:33 by mohamed-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (0);
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
 		i++;
 	}
-	return (1);
+	return (str);
 }
 
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	char test[] = "000a1";
-// 	printf("%d\n", ft_str_is_numeric(test));
+// 	char test[] = "WHATODSIDIA009";
+// 	printf("%s\n", ft_strlowcase(test));
 // 	return (0);
 // }
