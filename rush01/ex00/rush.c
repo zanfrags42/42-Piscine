@@ -3,6 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   rush.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: mohamed- <mohamed-@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 13:55:18 by mohamed-          #+#    #+#             */
@@ -18,6 +19,16 @@ int		is_correct_left_view(char **puzzle_board, int row);
 int		is_correct_top_view(char **puzzle_board, int column);
 int		is_in_column(char **puzzle_board, int row, int column, int digit);
 int		is_in_row(char **puzzle_board, int row, int column, int digit);
+=======
+/*   By: mohamed- <mohamed-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/03 13:55:18 by mohamed-          #+#    #+#             */
+/*   Updated: 2025/08/03 13:56:59 by mohamed-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "header.h"
+>>>>>>> 706fab569c44a1738acd9c44ce2f83937dddfaf1
 
 void	rush_recursive(char **puzzle_board, int row, int column)
 {
