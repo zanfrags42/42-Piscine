@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohamed- <mohamed-@student.42singapore.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/04 17:44:46 by mohamed-          #+#    #+#             */
-/*   Updated: 2025/08/04 17:44:46 by mohamed-         ###   ########.fr       */
+/*   Created: 2025/08/04 21:14:35 by mohamed-          #+#    #+#             */
+/*   Updated: 2025/08/04 21:14:35 by mohamed-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putnbr(int nb)
+int	ft_atoi(char *str)
 {
-	long	num;
-	char	c;
+	int	i;
+	int	tf;
+	int	out;
 
-	num = nb;
-	if (num < 0)
+	i = 0;
+	tf = 1;
+	out = 0;
+	while ((str[i] == 32) || (str[i] > 8 && str[i] < 14))
+		i++;
+	while (str[i] == '+' || str[i] == '-')
 	{
-		write(1, "-", 1);
-		num = -num;
+		if (str[i] == '-')
+			tf = -tf;
+		i++;
 	}
-	if (num > 9)
-		ft_putnbr(num / 10);
-	c = num % 10 + 48;
-	write(1, &c, 1);
+	while (str[i] > 47 && str[i] < 58)
+		out = out * 10 + (str[i++] - 48);
+	return (out * tf);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
-// 	int	nb = -2147483648;
-// 	ft_putnbr(nb);
-// 	write(1, "\n", 1);
-// 	return (0);
+// 	printf("%d\n", ft_atoi("--+-+132143893"));
 // }
