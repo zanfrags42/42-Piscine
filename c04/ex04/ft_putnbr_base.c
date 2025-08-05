@@ -24,11 +24,8 @@ int	is_valid(char *base)
 		if (base[i] == '-' || base[i] == '+')
 			return (0);
 		while (base[c])
-		{
-			if (base[i] == base[c])
+			if (base[i] == base[c++])
 				return (0);
-			c++;
-		}
 		i++;
 	}
 	return (i > 1);
